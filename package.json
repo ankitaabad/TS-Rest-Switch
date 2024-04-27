@@ -3,7 +3,7 @@
   "displayName": "TS Rest Switch",
   "description": "Effortlessly switch between contract and handler in ts-rest",
   "publisher": "ankitaabad",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "icon": "icon.png",
   "repository": {
     "url": "https://github.com/ankitaabad/TS-Rest-Switch.git"
