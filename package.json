@@ -3,7 +3,7 @@
   "displayName": "TS Rest Switch",
   "description": "Effortlessly switch between contract and handler in ts-rest",
   "publisher": "ankitaabad",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "icon": "icon.png",
   "repository": {
     "url": "https://github.com/ankitaabad/TS-Rest-Switch.git"
@@ -22,16 +22,15 @@
         "command": "extension.tsRestSwitch",
         "title": "TS Rest Switch: Switch between Contract and Handler"
       }
-      
     ],
     "keybindings": [
       {
-          "command": "extension.tsRestSwitch",
-          "key": "ctrl+t", 
-          "mac": "cmd+t", 
-          "when": "editorTextFocus" 
+        "command": "extension.tsRestSwitch",
+        "key": "ctrl+t",
+        "mac": "cmd+t",
+        "when": "editorTextFocus"
       }
-  ]
+    ]
   },
   "scripts": {
     "vscode:prepublish": "npm run compile",
