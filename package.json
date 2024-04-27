@@ -1,0 +1,56 @@
+{
+  "name": "ts-rest-switch",
+  "displayName": "TS Rest Switch",
+  "description": "Effortlessly switch between contract and handler in ts-rest",
+  "publisher": "ankitaabad",
+  "version": "0.0.1",
+  "icon": "icon.png",
+  "repository": {
+    "url": "https://github.com/ankitaabad/TS-Rest-Switch.git"
+  },
+  "engines": {
+    "vscode": "^1.88.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "extension.tsRestSwitch",
+        "title": "TS Rest Switch: Switch between Contract and Handler"
+      }
+      
+    ],
+    "keybindings": [
+      {
+          "command": "extension.tsRestSwitch",
+          "key": "ctrl+t", 
+          "mac": "cmd+t", 
+          "when": "editorTextFocus" 
+      }
+  ]
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc  -p ./ ",
+    "watch": "tsc -watch -p ./",
+    "pretest": "npm run compile && npm run lint",
+    "lint": "eslint src --ext ts",
+    "test": "vscode-test"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.88.0",
+    "@types/mocha": "^10.0.6",
+    "@types/node": "18.x",
+    "@typescript-eslint/eslint-plugin": "^7.0.2",
+    "@typescript-eslint/parser": "^7.0.2",
+    "eslint": "^8.56.0",
+    "typescript": "^5.3.3",
+    "@vscode/test-cli": "^0.0.6",
+    "@vscode/test-electron": "^2.3.9",
+    "@typescript-eslint/typescript-estree": "^5.4.0"
+  }
+}
