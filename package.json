@@ -4,6 +4,7 @@
   "description": "Effortlessly switch between contract and handler in ts-rest",
   "publisher": "ankitaabad",
   "version": "0.0.5",
+  "main":"./dist/extension",
   "icon": "icon.png",
   "repository": {
     "url": "https://github.com/ankitaabad/TS-Rest-Switch.git"
@@ -15,7 +16,6 @@
     "Other"
   ],
   "activationEvents": [],
-  "main": "./out/extension.js",
   "contributes": {
     "commands": [
       {
@@ -33,12 +33,16 @@
     ]
   },
   "scripts": {
-    "vscode:prepublish": "npm run compile",
     "compile": "tsc  -p ./ ",
     "watch": "tsc -watch -p ./",
     "pretest": "npm run compile && npm run lint",
     "lint": "eslint src --ext ts",
-    "test": "vscode-test"
+    "test": "vscode-test",
+    "vscode:prepublish": "npm run esbuild-base -- --minify",
+    "esbuild-base": "esbuild ./src/extension.ts --bundle --outfile=dist/extension.js --external:vscode --format=cjs --platform=node",
+    "esbuild": "npm run esbuild-base -- --sourcemap",
+    "esbuild-watch": "npm run esbuild-base -- --sourcemap --watch",
+    "test-compile": "tsc -p ./"
   },
   "dependencies": {
     "@typescript-eslint/typescript-estree": "^5.62.0"
@@ -51,6 +55,7 @@
     "@typescript-eslint/parser": "^7.0.2",
     "@vscode/test-cli": "^0.0.6",
     "@vscode/test-electron": "^2.3.9",
+    "esbuild": "^0.20.2",
     "eslint": "^8.56.0",
     "typescript": "^5.3.3"
   }

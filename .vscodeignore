@@ -6,6 +6,9 @@ src/**
 vsc-extension-quickstart.md
 **/tsconfig.json
 **/.eslintrc.json
+**/out
 **/*.map
 **/*.ts
 **/.vscode-test.*
+node_modules
+
